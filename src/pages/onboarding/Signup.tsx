@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ventreebg from "../assets/ventreebg.png";
+import ventreebg from "../../assets/ventreebg.png";
 
 export default function Signup() {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -17,22 +17,23 @@ export default function Signup() {
           />
         </div>
 
-         {/* Right side */}
+        {/* Right side */}
         <div className="w-full md:w-1/2 flex flex-col justify-between p-8 min-h-[600px]">
-          <div className="text-center">
-            <h2 className="text-2xl font-semibold pb-2">Welcome Back!</h2>
+          <div className="text-center mb-6">
+            <h2 className="text-2xl font-semibold pb-2">Less Stress</h2>
+            <p className="text-2xl font-semibold">More Business</p>
           </div>
 
           <div className="w-full max-w-sm mx-auto space-y-6">
             <div>
               <label className="block text-sm font-medium mb-1">
-                Business Name
+                Phone Number
               </label>
               <input
                 type="text"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
-                placeholder="Put your business number"
+                placeholder="Put your phone number"
                 className="w-full border rounded-md p-2 outline-none"
               />
             </div>
@@ -49,19 +50,17 @@ export default function Signup() {
           </div>
 
           <div className="w-full max-w-sm mx-auto space-y-4">
-            <button
-              className="w-full py-2 rounded-md font-medium border"
-            >
-              Login
+            <button className="w-full py-2 rounded-md font-medium border">
+              Create Account
             </button>
             <p className="text-sm text-center">
-              Don't have an account?{" "}
-              <a href="/signup" className="font-medium underline">
-                Create Account
+              Already have an account?{" "}
+              <a href="/login" className="font-medium underline">
+                Login
               </a>
             </p>
           </div>
-      </div>
+        </div>
       </div>
     </div>
   );
