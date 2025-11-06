@@ -3,8 +3,6 @@
 
 /* Tailwind layers (optional in v4, but fine to keep) */
 /* No be optional o, If u no put am like this u go suffer */
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 /* Theme */

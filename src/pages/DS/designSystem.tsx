@@ -1,7 +1,6 @@
 import { LoaderCircle } from "lucide-react";
-import "./App.css";
 
-export function DesignSystemComponents() {
+export default function DesignSystem() {
   return (
     <div className="px-5 flex">
       <div className="space-y-5 w-1/2">

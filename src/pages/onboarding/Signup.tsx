@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ventreebg from "../assets/ventreebg.png";
+import ventreebg from "../../assets/ventreebg.png";
 
 export default function Signup() {
   const [phoneNumber, setPhoneNumber] = useState("");
