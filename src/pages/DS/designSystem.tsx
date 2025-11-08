@@ -18,6 +18,7 @@ export default function DesignSystem() {
 
         <p className="web-small"> web small</p>
         <p className="password-small"> password small</p>
+        <p className="link-small"> link small</p>
         <p className="web-body"> web Body</p>
         <p className="web-bold"> web body-bold</p>
       </div>

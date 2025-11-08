@@ -57,7 +57,7 @@ export default function Signup() {
       // });
       //
       // if (!response.ok) {
-      //   throw new Error('Signup failed');
+      //   toast.error('Signup failed');
       // }
       //
       // const data = await response.json();
@@ -94,8 +94,8 @@ export default function Signup() {
   };
 
   return (
-    <div className="w-full flex flex-col md:space-y-6 space-y-16 justify-between md:p-6">
-      <div className="text-center text-[var(--color-secondary)] md:pb-7 ">
+    <section className="w-full flex flex-col md:space-y-6 space-y-16 justify-between md:p-6">
+      <div className="text-center text-[var(--color-black)] md:pb-7 ">
         <h2 className="h3 pb-2">Less Stress</h2>
         <p className="h3">More Business</p>
       </div>
@@ -160,12 +160,12 @@ export default function Signup() {
           Already have an account?{" "}
           <a
             href="/login"
-            className="font-medium text-[var(--color-secondary)] underline"
+            className="link-small text-[var(--color-black)] underline"
           >
             Login
           </a>
         </p>
       </div>
-    </div>
+    </section>
   );
 }

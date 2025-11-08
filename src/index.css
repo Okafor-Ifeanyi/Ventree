@@ -134,7 +134,7 @@
     @apply px-4 py-2 rounded-lg font-medium transition-colors cursor-pointer;
   }
   .btn-primary {
-    @apply bg-secondary text-white shadow-lg hover:bg-secondary-2 ;
+    @apply bg-black text-white shadow-lg hover:bg-grey ;
   }
   .btn-sec {
     @apply bg-primary-2 text-secondary hover:bg-primary-3;
@@ -171,6 +171,9 @@
     @apply text-2xl font-semibold tracking-wide;
   }
   .label {
+    @apply text-sm font-semibold tracking-wide;
+  }
+  .link-small {
     @apply text-sm font-semibold tracking-wide;
   }
   .password-small {
