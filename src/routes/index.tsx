@@ -10,6 +10,7 @@ import MainWrapper from "../layouts/mainWrapper";
 import MainLayout from "../layouts/mainLayout";
 import { Home } from "../pages/home";
 import { ManageStocks } from "../pages/stocks";
+import RecordSale from "../pages/sales/RecordSales";
 
 const RegisterPage = lazy(() => import("../pages/onboarding/Signup"));
 const LoginPage = lazy(() => import("../pages/onboarding/Login"));
@@ -18,6 +19,7 @@ const Otp = lazy(() => import("../pages/onboarding/Otp"));
 const ResetPasswordPage = lazy(() => import("../pages/onboarding/ResetPassword"));
 const DesignSystem = lazy(() => import("../pages/DS/designSystem"));
 const LogoutPage = lazy(() => import("../pages/onboarding/Logout"));
+
 
 
 function AppRoutes() {
@@ -49,7 +51,7 @@ function AppRoutes() {
           <Route path="/" element={<MainWrapper component={<MainLayout />} />}>
             <Route path="/home" element={<Home />} />
             <Route path="/stocks" element={<ManageStocks />} />
-
+            <Route path="/record-sales" element={<RecordSale />} />
           </Route>
           
         </Routes>
