@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { LoaderCircle } from "lucide-react";
+import TextInput from "../../components/ui/textInput";
+import PasswordInput from "../../components/ui/passwordInput";
 
 export default function Login() {
   // State boxes to store what the user types
@@ -110,7 +112,7 @@ export default function Login() {
 
       <div className="w-full max-w-sm mx-auto space-y-6">
         <div>
-          <label className="block text-black label md:mb-1 mb-2">
+          {/* <label className="block text-black label md:mb-1 mb-2">
             Business Name
           </label>
           <input
@@ -119,12 +121,20 @@ export default function Login() {
             onChange={(e) => setBusinessNumber(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="Put your business number"
-            className="w-full border border-secondary-4 focus:ring-2 focus:ring-tertiary body-small rounded-lg p-3 outline-none"
+            className="w-full border border-secondary-4 focus:ring-2 focus:ring-[var(--color-tertiary)] body-small rounded-lg p-3 outline-none"
             disabled={isLoading}
-          />
+          /> */}
+          <TextInput 
+            label="Business Name"
+            placeholder="Put your business number"
+            value={businessNumber}
+            onChange={(e) => setBusinessNumber(e.target.value)}
+            className=""
+            disabled={isLoading}
+        />
         </div>
         <div>
-          <label className="block text-black label md:mb-1 mb-2">
+        {/* <label className="block text-[var(--color-black)] label md:mb-1 mb-2">
             Password
           </label>
           <input
@@ -135,15 +145,20 @@ export default function Login() {
             placeholder="Put your password"
             className="w-full border border-secondary-4 focus:ring-2 focus:ring-tertiary body-small rounded-md p-2 outline-none"
             disabled={isLoading}
+          /> */}
+          <PasswordInput 
+            label="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <p className="text-sm pt-1 text-right">
+          {/* <p className="text-sm pt-1 text-right">
             <a
               href="/reset-password"
               className="font-medium text-black"
             >
               Forgot password?{" "}
             </a>
-          </p>
+          </p> */}
         </div>
       </div>
 
@@ -159,8 +174,8 @@ export default function Login() {
         <p className="password-small text-subtle-text)]  text-center">
           Don't have an account?{" "}
           <a
-            href="/signup"
-            className="link-small text-black)] underline"
+            href="/register"
+            className="link-small text-black underline"
           >
             Create Account
           </a>
