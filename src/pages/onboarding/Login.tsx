@@ -104,13 +104,13 @@ export default function Login() {
 
   return (
     <section className="w-full flex flex-col md:space-y-16 space-y-16 justify-between md:p-6">
-      <div className="text-center text-[var(--color-black)]">
+      <div className="text-center text-black">
         <h2 className="h3 pb-2">Welcome Back!</h2>
       </div>
 
       <div className="w-full max-w-sm mx-auto space-y-6">
         <div>
-          <label className="block text-[var(--color-black)] label md:mb-1 mb-2">
+          <label className="block text-black label md:mb-1 mb-2">
             Business Name
           </label>
           <input
@@ -119,12 +119,12 @@ export default function Login() {
             onChange={(e) => setBusinessNumber(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="Put your business number"
-            className="w-full border border-[var(--color-secondary-4)] focus:ring-2 focus:ring-[var(--color-tertiary)] body-small rounded-lg p-3 outline-none"
+            className="w-full border border-secondary-4 focus:ring-2 focus:ring-tertiary body-small rounded-lg p-3 outline-none"
             disabled={isLoading}
           />
         </div>
         <div>
-          <label className="block text-[var(--color-black)] label md:mb-1 mb-2">
+          <label className="block text-black label md:mb-1 mb-2">
             Password
           </label>
           <input
@@ -133,13 +133,13 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="Put your password"
-            className="w-full border border-[var(--color-secondary-4)] focus:ring-2 focus:ring-[var(--color-tertiary)] body-small rounded-md p-2 outline-none"
+            className="w-full border border-secondary-4 focus:ring-2 focus:ring-tertiary body-small rounded-md p-2 outline-none"
             disabled={isLoading}
           />
           <p className="text-sm pt-1 text-right">
             <a
               href="/reset-password"
-              className="font-medium text-[var(--color-black)]"
+              className="font-medium text-black"
             >
               Forgot password?{" "}
             </a>
@@ -150,17 +150,17 @@ export default function Login() {
       <div className="w-full max-w-sm mx-auto space-y-4">
         <button
           onClick={handleSubmit}
-          className="w-full btn btn-primary flex items-center justify-center gap-2 border active:border-[var(--color-tertiary)]" 
+          className="w-full btn btn-primary flex items-center justify-center gap-2 border active:border-tertiary" 
           disabled={isLoading}
         >
           {isLoading ? "Logging in" : "Login"}
           {isLoading && <LoaderCircle width={20} className="animate-spin" />}
         </button>
-        <p className="password-small text-[var(--color-subtle-text)]  text-center">
+        <p className="password-small text-subtle-text)]  text-center">
           Don't have an account?{" "}
           <a
             href="/signup"
-            className="link-small text-[var(--color-black)] underline"
+            className="link-small text-black)] underline"
           >
             Create Account
           </a>
