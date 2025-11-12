@@ -23,7 +23,6 @@ const Modal: React.FC<ModalProps> = ({
   titleColor,
   description,
   children,
-  size = "md",
   removeIcon = true,
 }) => {
   if (!isOpen) return null;

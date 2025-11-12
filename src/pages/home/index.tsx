@@ -5,7 +5,6 @@ import { ActionCard } from "./components/ActionButtons";
 import { SectionHeader } from "./components/SectionHeader";
 import { SalesHistoryItem } from "./components/SaleHistorytable";
 import { NotificationItem } from "./components/NotificationTable";
-import { SelectInputBorderless } from "../../components/ui/selectInput";
 
 // Main Home Component
 export const Home = () => {

@@ -5,7 +5,7 @@ import { NotificationModal } from "./components/NotificationModal";
 import { ProfileModal } from "./components/ProfileModal";
 import { Icon } from "@iconify/react";
 import { SupportModal } from "./components/SupportModal";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { truncateTextWithStringMethod } from "../lib/helper";
 
 // Mobile Header Component

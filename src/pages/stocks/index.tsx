@@ -202,7 +202,7 @@ import { useState } from "react";
 import { StatCard } from "../home/components/StatCard";
 import { stats } from "../../lib/dummyData";
 import { useAddGoodsModal } from "../../hooks/useAddGoodsModal";
-import { AddGoodsModal, type GoodsFormData } from "./components/AddGoodsModal";
+import { AddGoodsModal } from "./components/AddGoodsModal";
 import Modal from "../../components/ui/modal";
 
 export const ManageStocks = () => {
@@ -210,7 +210,7 @@ export const ManageStocks = () => {
   const [salesSuccessModal, setSalesSuccessModal] = useState(false);
 
   // Sample goods data - replace with your actual data
-  const [goods, setGoods] = useState<Good[]>([
+  const [goods] = useState<Good[]>([
     {
       id: "1",
       product: "Coca-Cola 50cl",
@@ -256,7 +256,7 @@ export const ManageStocks = () => {
   ]);
 
   // Handle form submission
-  const handleAddGoods = async (data: GoodsFormData) => {
+  const handleAddGoods = async () => {
     try {
       // Option 1: Using API mutation
       // await addGoods(data).unwrap();
