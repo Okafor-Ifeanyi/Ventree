@@ -23,13 +23,12 @@ const Modal: React.FC<ModalProps> = ({
   titleColor,
   description,
   children,
-  size = "md",
   removeIcon = true,
 }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="modal-bg">
+    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
       <div
         className={clsx(
           "relative bg-white rounded-xl shadow-lg p-6 transition-all w-2/3 md:w-1/3",

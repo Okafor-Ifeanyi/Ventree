@@ -98,11 +98,11 @@ export default function Login() {
   };
 
   // Allow users to press Enter key to submit instead of clicking button
-  const handleKeyPress = (e: { key: string }) => {
-    if (e.key === "Enter") {
-      handleSubmit();
-    }
-  };
+  // const handleKeyPress = (e: { key: string }) => {
+  //   if (e.key === "Enter") {
+  //     handleSubmit();
+  //   }
+  // };
 
   return (
     <section className="w-full flex flex-col md:space-y-16 space-y-16 justify-between md:p-6">

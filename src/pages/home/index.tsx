@@ -27,6 +27,21 @@ export const Home = () => {
             <option value="custom">Custom</option>
           </select>
         </div>
+
+        {/* <SelectInputBorderless 
+          placeholder="Today"
+          options={[
+            { value: 'today', label: 'Today' },
+            { value: 'yesterday', label: 'Yesterday' },
+            { value: 'last-7-days', label: 'Last 7 days' },
+            { value: 'last-30-days', label: 'Last 30 days' },
+            { value: 'custom', label: 'Custom' },
+          ]}
+          name="time-filter"
+          value="today"
+          onChange={(e) => console.log(e.target.value)}
+          className="w-36 flex items-center gap-2 h4 text-secondary border-none"
+        /> */}
       </article>
 
       {/* Stats Grid */}
@@ -48,6 +63,7 @@ export const Home = () => {
         {actions.map((action, index) => (
           <ActionCard
             key={index}
+            icon={action.icon}
             title={action.title}
             description={action.description}
             onClick={() => console.log(`Clicked: ${action.title}`)}

@@ -178,53 +178,41 @@
   }
   .h6 {
     @apply text-lg font-semibold tracking-wide;
-    .label {
-      @apply text-sm font-bold tracking-wide;
-    }
-    .link-small {
-      @apply text-sm font-semibold tracking-wide;
-    }
-    .password-small {
-      @apply text-sm font-light tracking-wide;
-    }
-
-    .body {
-      @apply text-lg;
-    }
-    .body-bold {
-      @apply text-lg font-semibold;
-    }
-    .body-small {
-      @apply text-sm;
-    }
-    .body-subtle {
-      @apply text-xs;
-    }
-    .web-body {
-      @apply text-xl;
-    }
-    .web-small {
-      @apply text-lg;
-    }
-    .web-bold {
-      @apply text-xl font-semibold;
-    }
-
-    .modal-bg {
-      @apply fixed inset-0 bg-black/50 flex items-center justify-center z-50;
-    }
-
-    .sm-text {
-      @apply text-sm mb-2 tracking-wide;
-    }
+  } 
+  .label {
+    @apply text-sm font-bold tracking-wide;
+  }
+  .link-small {
+    @apply text-sm font-semibold tracking-wide;
+  }
+  .password-small {
+    @apply text-sm font-light tracking-wide;
   }
 
-  .button-glow-primary {
-    box-shadow: 0 0 5px 3px #cdfc54;
+  .body {
+    @apply text-lg;
+  }
+  .body-bold {
+    @apply text-lg font-semibold;
+  }
+  .body-small {
+    @apply text-xs;
+  }
+  .body-subtle {
+    @apply text-xs;
+  }
+  .web-body {
+    @apply text-xl;
+  }
+  .web-small {
+    @apply text-lg;
+  }
+  .web-bold {
+    @apply text-xl font-semibold;
   }
 
-  .button-glow-sec {
-    box-shadow: 0 0 5px 3px #0fb25a;
+  .modal-bg {
+    @apply fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 lg:p-0;
   }
 
   .button-glow-tertiary {

@@ -202,16 +202,15 @@ import { useState } from "react";
 import { StatCard } from "../home/components/StatCard";
 import { stats } from "../../lib/dummyData";
 import { useAddGoodsModal } from "../../hooks/useAddGoodsModal";
-import { AddGoodsModal, type GoodsFormData } from "./components/AddGoodsModal";
+import { AddGoodsModal } from "./components/AddGoodsModal";
 import Modal from "../../components/ui/modal";
-import { Link } from "react-router-dom";
 
 export const ManageStocks = () => {
   const { isOpen, openModal, closeModal } = useAddGoodsModal();
   const [salesSuccessModal, setSalesSuccessModal] = useState(false);
 
   // Sample goods data - replace with your actual data
-  const [goods, setGoods] = useState<Good[]>([
+  const [goods] = useState<Good[]>([
     {
       id: "1",
       product: "Coca-Cola 50cl",
@@ -257,7 +256,7 @@ export const ManageStocks = () => {
   ]);
 
   // Handle form submission
-  const handleAddGoods = async (data: GoodsFormData) => {
+  const handleAddGoods = async () => {
     try {
       // Option 1: Using API mutation
       // await addGoods(data).unwrap();
