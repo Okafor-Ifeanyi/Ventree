@@ -19,6 +19,7 @@ const FloatingLabelInput: React.FC<FloatingLabelInputProps> = ({
   error,
 }) => {
   const [isFocused, setIsFocused] = React.useState(false);
+  console.log(isFocused)
   return (
     <div className="relative mb-6">
       <input
