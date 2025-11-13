@@ -32,7 +32,7 @@ function MobileHeader({
           <div className="flex items-center gap-3">
             <button onClick={onNotificationClick} className="p-1">
               <Icon
-                icon="ic:twotone-notifications"
+                icon="ic:outline-notifications"
                 width="24"
                 height="24"
                 className="text-black"
@@ -43,7 +43,7 @@ function MobileHeader({
                 icon="material-symbols:menu"
                 width="24"
                 height="24"
-                className="text-black"
+                className="text-secondary"
               />
             </button>
           </div>
