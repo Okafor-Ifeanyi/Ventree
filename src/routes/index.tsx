@@ -13,6 +13,7 @@ import { ManageStocks } from "../pages/stocks";
 import RecordSale from "../pages/sales/RecordSales";
 import Notification from "../pages/notification/Notification";
 import { SetupShopPage } from "../pages/shop";
+import Settings from "../pages/settings/Settings"
 
 const RegisterPage = lazy(() => import("../pages/onboarding/Signup"));
 const LoginPage = lazy(() => import("../pages/onboarding/Login"));
@@ -56,6 +57,7 @@ function AppRoutes() {
             <Route path="/record-sales" element={<RecordSale />} />
             <Route path="/notification" element={<Notification />} />
             <Route path="/setup-shop" element={<SetupShopPage />} />
+            <Route path="/settings" element={<Settings />} />
           </Route>
           
         </Routes>
