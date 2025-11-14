@@ -260,21 +260,34 @@ export default function RecordSale() {
                 paymentMethod === method
               }`}
             >
-              <input
-                type="checkbox"
-                name="paymentMethod"
-                value={method}
-                checked={paymentMethod === method}
-                onChange={(e) => setPaymentMethod(e.target.value)}
-                className="
-                          w-4 h-4
-                          appearance-none
-                          border border-accent-g3
-                          rounded-sm
-                          checked:bg-tertiary checked:border-accent-g3
-                          cursor-pointer
-                        "
-              />
+              <label className="flex items-center cursor-pointer gap-2">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value={method}
+                  checked={paymentMethod === method}
+                  onChange={(e) => setPaymentMethod(e.target.value)}
+                  className="hidden"
+                />
+
+                <div
+                  className={`
+      w-5 h-5
+      flex items-center justify-center
+      rounded-sm
+      border border-accent-g3 hover:bg-accent-g4
+      ${paymentMethod === method ? "bg-success" : "bg-transparent"}
+    `}
+                >
+                  {paymentMethod === method && (
+                    <span className="text-white">
+                      <Icon icon="stash:check-solid" width="24" height="24" />
+                    </span>
+                  )}
+                </div>
+
+                <span>{method}</span>
+              </label>
 
               <span className="body text-black">{method}</span>
             </label>
