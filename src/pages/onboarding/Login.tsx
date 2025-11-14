@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import { toast } from "sonner";
 import { LoaderCircle } from "lucide-react";
 import TextInput from "../../components/ui/textInput";
 import PasswordInput from "../../components/ui/passwordInput";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   // State boxes to store what the user types
   const [businessNumber, setBusinessNumber] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   // Track if we're currently submitting (for loading state)
   const [isLoading, setIsLoading] = useState(false);
 
@@ -71,6 +73,7 @@ export default function Login() {
 
       // If we reach here, login was successful!
       toast.success("Login successful!");
+      navigate("/home")
 
       // Clear the input fields
       setBusinessNumber("");
