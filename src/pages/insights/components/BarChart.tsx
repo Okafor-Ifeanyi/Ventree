@@ -66,6 +66,7 @@ export const CustomContentOfTooltip = ({
   defaultIndex?: number;
 }) => {
     const isMobile = window.innerWidth < 640;
+    
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart
@@ -80,8 +81,9 @@ export const CustomContentOfTooltip = ({
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" tick={{ fontSize: isMobile ? 10 : 14, fill: '#666666' }}/>
         <YAxis tick={{ fontSize: isMobile ? 10 : 14, fill: '#666666' }} tickFormatter={(value) => `₦${(value / 1000).toFixed(1)}K`}  />
-        <Tooltip content={<CustomTooltip active payload label />} />
+        <Tooltip content={<CustomTooltip active={true} coordinate={undefined} accessibilityLayer={false} activeIndex={undefined} payload={[]}  />} />
         {/* <Legend /> */}
+        
         <Bar
           dataKey="pv"
           barSize={isMobile ? 20 : 40}

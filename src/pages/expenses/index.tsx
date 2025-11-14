@@ -16,7 +16,6 @@ export const GoodsListItem: React.FC<GoodsListItemProps> = ({
   category,
   amount,
   date,
-  quantity,
   className,
   onMenuClick,
 }) => {
