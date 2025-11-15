@@ -6,7 +6,7 @@ interface ConfirmPasswordProps {
   label?: string;
   value: string;
   type?: string;
-  className?: string; // 👈 new
+  className?: string;
   noFP?: boolean;
   placeholder?: string;
   disabled?: boolean;
@@ -17,6 +17,8 @@ const ConfirmPassword: React.FC<ConfirmPasswordProps> = ({
   label,
   value,
   noFP = true,
+  placeholder = "Password", // Default value
+  disabled = false,
   onChange,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -26,19 +28,17 @@ const ConfirmPassword: React.FC<ConfirmPasswordProps> = ({
       {label && (
         <label className="block mb-2 label text-black">
           {label}
-        </label> // 👈 only render if passed}
+        </label>
       )}
-
       <div className="relative">
         <input
           type={showPassword ? "text" : "password"}
           value={value}
           onChange={onChange}
-          placeholder="Password"
-          className="w-full px-4 py-3 pr-12 border border-secondary-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-glow"
+          placeholder={placeholder}
+          disabled={disabled}
+          className="w-full px-4 py-3 pr-12 border border-secondary-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-glow disabled:opacity-50 disabled:cursor-not-allowed"
         />
-
-       
         {/* Toggle password visibility */}
         <button
           type="button"
@@ -48,17 +48,14 @@ const ConfirmPassword: React.FC<ConfirmPasswordProps> = ({
           {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
         </button>
       </div>
-
       {/* Show password toggle */}
       <div className="flex justify-between mt-2 text-sm">
         <div></div>
-
         {noFP ? (
           <Link to="/reset-password" className="text-black hover:underline">
             Forgot Password?
           </Link>
         ) : null}
-        
       </div>
     </div>
   );

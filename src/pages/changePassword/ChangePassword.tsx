@@ -6,35 +6,52 @@ import ConfirmPassword from "../../components/ui/confirmPassword";
 import { validatePassword } from "../../components/common/validation";
 import { useFormSubmit } from "../../components/common/formHooks";
 
+interface PasswordState {
+  current: string;
+  new: string;
+  confirm: string;
+}
+
 export default function ChangePasswordForm() {
-  const [currentPassword, setCurrentPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwords, setPasswords] = useState<PasswordState>({
+    current: "",
+    new: "",
+    confirm: "",
+  });
   const { isLoading, submit } = useFormSubmit();
 
-  const validateForm = (): boolean => {
-    // Validate current password
-    const currentPasswordError = validatePassword(currentPassword);
-    if (currentPasswordError) {
-      toast.error(currentPasswordError);
-      return false;
-    }
+  const handlePasswordChange = (field: keyof PasswordState, value: string) => {
+    setPasswords((prev) => ({ ...prev, [field]: value }));
+  };
 
-    // Validate new password
-    const newPasswordError = validatePassword(newPassword);
-    if (newPasswordError) {
-      toast.error(`New password: ${newPasswordError.toLowerCase()}`);
-      return false;
+  const validateForm = (): boolean => {
+    const validationErrors = [
+      { 
+        error: validatePassword(passwords.current), 
+        prefix: "" 
+      },
+      { 
+        error: validatePassword(passwords.new), 
+        prefix: "New password: " 
+      },
+    ];
+
+    // Check for validation errors
+    for (const { error, prefix } of validationErrors) {
+      if (error) {
+        toast.error(prefix ? `${prefix}${error.toLowerCase()}` : error);
+        return false;
+      }
     }
 
     // Check if passwords match
-    if (newPassword !== confirmPassword) {
+    if (passwords.new !== passwords.confirm) {
       toast.error("New passwords do not match");
       return false;
     }
 
     // Check if new password is different from current
-    if (currentPassword === newPassword) {
+    if (passwords.current === passwords.new) {
       toast.error("New password must be different from current password");
       return false;
     }
@@ -49,14 +66,12 @@ export default function ChangePasswordForm() {
     await submit(
       async () => {
         // YOUR API CALL HERE
-        // Example: await changePassword({ currentPassword, newPassword });
+        // Example: await changePassword({ currentPassword: passwords.current, newPassword: passwords.new });
         await new Promise((resolve) => setTimeout(resolve, 1500));
       },
       "Password changed successfully!",
       () => {
-        setCurrentPassword("");
-        setNewPassword("");
-        setConfirmPassword("");
+        setPasswords({ current: "", new: "", confirm: "" });
         // Optional: redirect or close modal
         // window.location.href = '/profile';
       }
@@ -64,67 +79,67 @@ export default function ChangePasswordForm() {
   };
 
   const handleCancel = () => {
-    setCurrentPassword("");
-    setNewPassword("");
-    setConfirmPassword("");
+    setPasswords({ current: "", new: "", confirm: "" });
   };
+
+  const passwordFields = [
+    {
+      id: "current",
+      label: "Current Password",
+      placeholder: "Put your current password",
+      value: passwords.current,
+    },
+    {
+      id: "new",
+      label: "New Password",
+      placeholder: "Put your new password",
+      value: passwords.new,
+    },
+    {
+      id: "confirm",
+      label: "Confirm Password",
+      placeholder: "Put your new password again",
+      value: passwords.confirm,
+    },
+  ] as const;
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 md:bg-white">
       <div className="w-full max-w-5xl bg-white rounded-xl overflow-hidden">
-        <div
-          className="text-white py-15 px-6 text-center bg-black bg-center"
-          style={{ backgroundImage: "url('images/onboarding-pattern.svg')" }}
-        >
-          <h1 className="text-2xl font-semibold">Change Password</h1>
+        <div className="md:text-white text-black md:py-15 md:px-6 py-4 text-left md:text-center md:bg-black bg-center md:bg-[url('images/onboarding-pattern.svg')]">
+          <h1 className="h2">Change Password</h1>
         </div>
 
-        <form onSubmit={handleSubmit} className="py-8 space-y-6">
-          <ConfirmPassword
-            label="Current Password"
-            placeholder="Put your current password"
-            value={currentPassword}
-            onChange={(e) => setCurrentPassword(e.target.value)}
-            disabled={isLoading}
-            noFP={false}
-          />
+        <form onSubmit={handleSubmit} className="md:py-8 py-5 space-y-6">
+          {passwordFields.map((field) => (
+            <ConfirmPassword
+              key={field.id}
+              label={field.label}
+              placeholder={field.placeholder}
+              value={field.value}
+              onChange={(e) => handlePasswordChange(field.id as keyof PasswordState, e.target.value)}
+              disabled={isLoading}
+              noFP={false}
+            />
+          ))}
 
-          <ConfirmPassword
-            label="New Password"
-            placeholder="Put your new password"
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
-            disabled={isLoading}
-            noFP={false}
-          />
-
-          <ConfirmPassword
-            label="Confirm Password"
-            placeholder="Put your new password again"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            disabled={isLoading}
-            noFP={false}
-          />
-
-          <div className="flex gap-4 pt-4">
+          <div className="flex flex-col gap-4 pt-4 md:flex-row md:justify-between">
             <button
               type="button"
               onClick={handleCancel}
               disabled={isLoading}
-              className="flex-1 px-6 py-3 body border border-secondary text-secondary rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full md:w-80 px-6 btn btn-tertiary rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Cancel
             </button>
+
             <button
               type="submit"
               disabled={isLoading}
-              className="flex-1 px-6 py-3 btn btn-primary  rounded-md f flex items-center justify-center gap-2"
+              className="w-full md:w-80 px-6 btn btn-primary rounded-md flex items-center justify-center gap-2"
             >
               {isLoading ? "Saving..." : "Save"}
-              {isLoading && (
-                <LoaderCircle width={20} className="animate-spin" />
-              )}
+              {isLoading && <LoaderCircle width={20} className="animate-spin" />}
             </button>
           </div>
         </form>
