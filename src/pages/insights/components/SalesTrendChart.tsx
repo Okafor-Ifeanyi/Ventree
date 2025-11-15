@@ -16,11 +16,11 @@ interface SalesTrendChartProps {
 }
 
 export const SalesTrendChart: React.FC<SalesTrendChartProps> = ({
-  data,
+//   data,
   title = "Sales Trend",
   period = "This Week",
 }) => {
-  const maxAmount = Math.max(...data.map((d) => d.amount));
+//   const maxAmount = Math.max(...data.map((d) => d.amount));
 
   return (
     <div className="my-6">
