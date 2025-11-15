@@ -58,7 +58,7 @@ export default function Signup() {
             value={businessName}
             onChange={(e) => setBusinessName(e.target.value)}
             placeholder="Put your business name"
-            className="w-full text-subtle border border-secondary-4 focus:ring-2 focus:ring-tertiary rounded-lg p-3 outline-none body-small"
+            className="w-full text-black border border-secondary-4 focus:ring-2 focus:ring-tertiary rounded-lg p-3 outline-none body"
             disabled={isLoading}
           />
         </div>
@@ -70,7 +70,7 @@ export default function Signup() {
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
             placeholder="Put your phone number"
-            className="w-full text-subtle border border-secondary-4 focus:ring-2 focus:ring-tertiary rounded-lg p-3 outline-none body-small"
+            className="w-full text-black border border-secondary-4 focus:ring-2 focus:ring-tertiary rounded-lg p-3 outline-none body"
             disabled={isLoading}
           />
         </div>
@@ -82,7 +82,7 @@ export default function Signup() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Put your password"
-            className="w-full text-subtle border border-secondary-4 focus:ring-2 focus:ring-tertiary rounded-lg p-3 outline-none body-small"
+            className="w-full text-black border border-secondary-4 focus:ring-2 focus:ring-tertiary rounded-lg p-3 outline-none body"
             disabled={isLoading}
           />
         </div>

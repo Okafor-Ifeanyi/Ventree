@@ -55,7 +55,7 @@ export default function ResetPassword() {
             value={businessNumber}
             onChange={(e) => setBusinessNumber(e.target.value)}
             placeholder="Put your business number"
-            className="w-full border border-secondary-4 focus:ring-2 focus:ring-tertiary body-small rounded-lg p-3 outline-none"
+            className="w-full text-black border border-secondary-4 focus:ring-2 focus:ring-tertiary body rounded-lg p-3 outline-none"
             disabled={isLoading}
           />
         </div>
@@ -67,7 +67,7 @@ export default function ResetPassword() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Put your new password"
-            className="w-full border border-secondary-4 focus:ring-2 focus:ring-tertiary body-small rounded-lg p-3 outline-none"
+            className="w-full border border-secondary-4 focus:ring-2 focus:ring-tertiary body rounded-lg p-3 outline-none"
             disabled={isLoading}
           />
         </div>

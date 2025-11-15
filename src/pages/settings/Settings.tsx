@@ -28,7 +28,7 @@ export default function Settings() {
       section: "Account",
       items: [
         {
-          to: "/change-password",
+          to: "/forgot-password",
           icon: "ic:outline-https",
           label: "Change Password",
         },
@@ -75,7 +75,7 @@ export default function Settings() {
             className="absolute left-0 text-black hover:text-gray-800 transition"
             aria-label="Back to home"
           >
-            <img src="/public/images/leftarrow.svg" alt="Leftarrow" />
+            <img src="/images/leftarrow.svg" alt="Leftarrow" />
           </Link>
           <h1 className="h3 text-black">Settings</h1>
         </header>
