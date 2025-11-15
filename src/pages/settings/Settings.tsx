@@ -28,7 +28,7 @@ export default function Settings() {
       section: "Account",
       items: [
         {
-          to: "/forgot-password",
+          to: "/change-password",
           icon: "ic:outline-https",
           label: "Change Password",
         },

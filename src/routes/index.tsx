@@ -16,7 +16,7 @@ import { SetupShopPage } from "../pages/shop";
 import Settings from "../pages/settings/Settings"
 import { BusinessInsightsPage } from "../pages/insights";
 import { ExpensesPage } from "../pages/expenses";
-import ForgottenPassword from "../pages/forgotpassword/ForgottenPassword";
+import ChangePassword from "../pages/changePassword/ChangePassword";
 
 const RegisterPage = lazy(() => import("../pages/onboarding/Signup"));
 const LoginPage = lazy(() => import("../pages/onboarding/Login"));
@@ -65,7 +65,7 @@ function AppRoutes() {
             <Route path="/home/expenses" element={<ExpensesPage />} />
           </Route>
 
-          <Route path="/forgot-password" element={<ForgottenPassword />} />
+          <Route path="/change-password" element={<ChangePassword />} />
           
         </Routes>
       </BrowserRouter>
